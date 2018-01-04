@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     
     @IBAction func changeTitleButtonTapped(_ sender: Any) {
         tapCount += 1
-        print(tapCount)
         
         if tapCount >= 10 {
             
