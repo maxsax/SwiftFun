@@ -3,7 +3,7 @@
 //  Swift Fun
 //
 //  Created by Michael on 2018-01-03.
-//  Copyright © 2018 Differential Consulting. All rights reserved.
+//  Copyright © 2018 Differential Consulting. All rights reserved...
 //
 
 import UIKit
@@ -16,12 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var changeTitleButton: UIButton!
     
     @IBAction func changeTitleButtonTapped(_ sender: Any) {
+        
         tapCount += 1
         
         if tapCount >= 10 {
             
             view.backgroundColor = UIColor.gray
-            
+            // make this dynamic
             titleLabel.text = "Differential Consulting"
             titleLabel.textColor = UIColor.white
             
