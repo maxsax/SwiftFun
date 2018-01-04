@@ -10,27 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var tapCount = 0
+    //var tapCount = 0
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var changeTitleButton: UIButton!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var additionSwitch: UISwitch!
     
     @IBAction func changeTitleButtonTapped(_ sender: Any) {
         
-        tapCount += 1
-        print(tapCount)
+        let addition = additionSwitch.isOn
+        var sum = 0.0
         
-        if tapCount >= 10 {
-            
-            view.backgroundColor = UIColor.gray
-            // make this dynamic
-            titleLabel.text = "Differential Consulting"
-            titleLabel.textColor = UIColor.white
-            
-            tapCount = 0
+        if addition {
+            sum = Double(topTextField.text!)! + Double(bottomTextField.text!)!
+            titleLabel.text = "\(topTextField.text!) + \(bottomTextField.text!) = \(sum)"
+        } else {
+            sum = Double(topTextField.text!)! - Double(bottomTextField.text!)!
+            titleLabel.text = "\(topTextField.text!) - \(bottomTextField.text!) = \(sum)"
         }
         
-        changeTitleButton.setTitle("Tap me \(10 - tapCount) more times!", for: [])
+        
+ 
     }
     
     override func viewDidLoad() {
